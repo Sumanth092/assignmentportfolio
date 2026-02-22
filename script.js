@@ -1,48 +1,61 @@
-// script.js for interactivity in the assignment portfolio
+// script.js
 
-// Hamburger Menu Toggle
+// Hamburger menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
 
 menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+    nav.classList.toggle('active');
 });
 
-// Smooth Scrolling
-const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+// Smooth scrolling
+const links = document.querySelectorAll('a[href^="#"]');
 
-smoothScrollLinks.forEach(link => {
+links.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Form Validation
+// Form validation
 const form = document.querySelector('form');
-
 form.addEventListener('submit', function(e) {
-    e.preventDefault();
     const name = this.querySelector('input[name="name"]').value;
-    const email = this.querySelector('input[name="email"]').value;
-    // Simple validation
-    if (!name || !email) {
-        alert('Please fill in all fields.');
-        return;
+    if (!name) {
+        e.preventDefault();
+        alert('Please enter your name.');
     }
-    // If valid, submit form or perform actions
-    alert('Form submitted successfully!');
 });
 
-// Dynamic Content
-const contentContainer = document.querySelector('.dynamic-content');
+// Scroll animations
+const animateElements = document.querySelectorAll('.animate');
 
-function loadDynamicContent() {
-    const content = '<h2>Dynamic Content Loaded!</h2>'; // Sample dynamic content
-    contentContainer.innerHTML = content;
-}
+const options = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: '0px'
+};
 
-window.addEventListener('load', loadDynamicContent);
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, options);
+
+animateElements.forEach(element => {
+    observer.observe(element);
+});
+
+// Skill progress animations
+const skillBars = document.querySelectorAll('.skill-bar');
+
+skillBars.forEach(bar => {
+    const progress = bar.querySelector('.progress');
+    const value = bar.getAttribute('data-progress');
+    progress.style.width = value + '%';
+});
