@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumanth's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Sumanth</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Sumanth</h1>
+            <p>Full Stack Developer | Web Designer | Tech Enthusiast</p>
+            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get In Touch</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="https://via.placeholder.com/200" alt="Profile picture of Sumanth" class="profile-pic">
+                <div class="about-text">
+                    <p>I'm a passionate developer with expertise in HTML, CSS, and JavaScript. I love creating beautiful, responsive websites that provide excellent user experiences. With a focus on clean code and modern design principles, I bring creative ideas to life through web development.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or learning about the latest web trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Personal portfolio website project" class="project-image">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive portfolio website showcasing my skills, projects, and experience. Built with HTML, CSS, and JavaScript with modern design principles.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="E-commerce website project" class="project-image">
+                    <h3>E-Commerce Site</h3>
+                    <p>A fully functional e-commerce platform with product filtering, shopping cart functionality, and responsive design for mobile and desktop users.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Weather application project" class="project-image">
+                    <h3>Weather App</h3>
+                    <p>A real-time weather application that fetches data from a weather API and displays current conditions, forecasts, and interactive weather maps.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>HTML5</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>CSS3</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <h3>Responsive Design</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required aria-label="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required aria-label="Your Email">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            <div class="social-links">
+                <p>Or connect with me on:</p>
+                <a href="#" class="social-link" aria-label="GitHub profile">GitHub</a>
+                <a href="#" class="social-link" aria-label="LinkedIn profile">LinkedIn</a>
+                <a href="#" class="social-link" aria-label="Twitter profile">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Sumanth. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
